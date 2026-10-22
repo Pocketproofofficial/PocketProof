@@ -1,0 +1,5 @@
+# Proof Pocket prototype — privacy notes
+
+This prototype saves receipt fields and compressed receipt images in the browser's local storage on the device where it is used. It does not send those entries to a Proof Pocket backend because no backend is configured. The OCR library is loaded from jsDelivr and may download language data from its configured source, so the chosen image may be processed locally by the browser once the code and language data are loaded; verify the library's current behaviour before making privacy promises in a production policy. Hosting/CDN providers may process normal technical request data.
+
+Users can export entries to a JSON file or delete individual receipts. Clearing browser data can erase saved entries. Do not describe this prototype as cloud-backed, end-to-end encrypted, or suitable for sensitive receipt data. Before a public commercial launch, prepare a reviewed privacy notice, retention/deletion process, data security design, and applicable UK GDPR compliance measures.
