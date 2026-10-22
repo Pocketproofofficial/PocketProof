@@ -1,5 +1,11 @@
-# Proof Pocket prototype — privacy notes
+# Proof Pocket prototype — privacy notes (v0.2)
 
-This prototype saves receipt fields and compressed receipt images in the browser's local storage on the device where it is used. It does not send those entries to a Proof Pocket backend because no backend is configured. The OCR library is loaded from jsDelivr and may download language data from its configured source, so the chosen image may be processed locally by the browser once the code and language data are loaded; verify the library's current behaviour before making privacy promises in a production policy. Hosting/CDN providers may process normal technical request data.
+This prototype stores receipt fields and compressed receipt images in the browser local storage on the device where it is used. It does not send entries to a Proof Pocket backend; no backend is configured. There is no automatic sync or account system.
 
-Users can export entries to a JSON file or delete individual receipts. Clearing browser data can erase saved entries. Do not describe this prototype as cloud-backed, end-to-end encrypted, or suitable for sensitive receipt data. Before a public commercial launch, prepare a reviewed privacy notice, retention/deletion process, data security design, and applicable UK GDPR compliance measures.
+The export file includes receipt information and may include receipt images. It is plain JSON and is **not encrypted**. Users should store it securely and transfer it privately. Imports are processed in the browser. Users can delete individual receipts or all records in that browser, but clearing browser data can also remove records.
+
+OCR uses Tesseract.js loaded from a third-party CDN and its language data may also be downloaded. Recognition is intended to run in the browser; verify current dependency behaviour before making production privacy promises. Hosting/CDN providers may process normal technical request data.
+
+Savings amounts are user-entered. A “confirmed by me” label means only that the user marked it so; it is not independent verification by Proof Pocket.
+
+Do not describe this prototype as cloud-backed, end-to-end encrypted, independently verified, or suitable for sensitive receipt data. Before a commercial launch, prepare a reviewed privacy notice, retention/deletion process, data security design, accessibility review, and applicable UK GDPR compliance measures.
